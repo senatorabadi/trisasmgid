@@ -1,0 +1,197 @@
+:root {
+    --primary: rgb(20, 27, 34);
+    --bg: rgba(238, 200, 156, 0.932);
+  }
+
+.review {
+    padding: 7% 1.4rem;
+}
+.review .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-top: 2rem;
+    margin-left: 5rem;
+    margin-bottom: 8rem;
+    margin-right: 5rem;
+  }
+.review .container .container-review {
+    flex: 1;
+    width: 600px;
+    position: relative; 
+    background: #43172f;
+    padding: 100px 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+
+.review #reviews-container {
+    max-height: 400px;
+    border: 1px solid var(--bg); 
+    border-radius: 5px; 
+    padding: 10px; 
+    background-color: var(--bg); 
+    overflow-y: auto;
+}
+.review .star-rating {
+    direction: rtl;
+    display: flex;
+    text-align: center;
+}
+
+.review .star-rating input {
+    display: none;
+}
+
+.review .star-rating label {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.review .star-rating input:checked ~ label {
+    color: gold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.review button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review button:hover {
+    background-color: whitesmoke;
+    color: var(--primary);
+}
+
+.review .review-header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.review .star-rating {
+    display: flex; 
+}
+
+/* Perubahan untuk notifikasi */
+.review .container-review .notification-review {
+    display: none; 
+    position: absolute; /* Gunakan absolute untuk memposisikan relatif terhadap container */
+    top: 20px; /* Posisikan sedikit di bawah h2 */
+    left: calc(50% + 80px); /* Posisikan di samping h2 */
+    transform: translateX(-50%); /* Pindahkan ke tengah horizontal */
+    background-color: #f8f8f8; /* Warna latar belakang notifikasi */
+    color: var(--primary); /* Warna teks notifikasi */
+    padding: 15px; /* Padding di dalam notifikasi */
+    border-radius: 5px; /* Sudut membulat untuk notifikasi */
+    z-index: 1000; /* Pastikan notifikasi berada di atas elemen lain */
+    width: auto; /* Atur lebar notifikasi sesuai kebutuhan */
+    margin: 0;
+    text-align: center; 
+}
+
+
+
+/* css display */
+.review .review-header {
+    display: flex; 
+    align-items: center; 
+    max-width: 100%;
+}
+
+.review .container .display {
+    flex: 1;
+    width: 600px;
+    background: var(--bg);
+    padding: 20px;
+    border-radius: 5px;
+    color: var(--primary);
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.review .review-header  {
+    display: grid;
+    justify-content: flex-start; /* Memastikan elemen terdistribusi dengan baik */
+    align-items: center; /* Memastikan elemen sejajar secara vertikal */
+    color: var(--primary);
+}
+.review .review-header .star{
+    color: gold;
+}
+
+.review .star-rating {
+    display: flex; /* Memastikan bintang ditampilkan dalam satu baris */
+}
+
+.review .review-container {
+    max-height: 400px; /* Atur tinggi maksimum sesuai kebutuhan */
+    border: 1px solid #1a0101; /* Tambahkan border untuk memisahkan dari latar belakang */
+    border-radius: 5px; /* Sudut membulat untuk tampilan yang lebih baik */
+    padding: 10px; /* Padding di dalam container */
+    background-color: white; /* Latar belakang putih untuk container */
+}
+
+
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    .review .container {
+        flex-direction: column; /* Mengubah arah flex menjadi kolom pada layar kecil */
+        margin: 1rem; /* Mengurangi margin pada layar kecil */
+    }
+
+    .review .container .container-review,
+    .review .container .display {
+        width: 90%; /* Menggunakan 90% lebar pada layar kecil */
+        max-width: none; /* Menghapus batasan max-width */
+        padding: 20px; /* Mengurangi padding */
+    }
+
+    .review .star-rating label {
+        font-size: 24px; /* Mengurangi ukuran font bintang */
+    }
+}
+
+@media (max-width: 480px ) {
+    .review .container .container-review,
+    .review .container .display {
+        padding: 15px; /* Mengurangi padding lebih lanjut untuk layar kecil */
+    }
+
+    .review button {
+        padding: 8px 12px; /* Mengurangi padding tombol */
+    }
+
+    .review .star-rating label {
+        font-size: 20px; /* Mengurangi ukuran font bintang lebih kecil */
+    }
+
+    input[type="text"],
+    textarea {
+        padding: 8px; /* Mengurangi padding input dan textarea */
+    }
+}
